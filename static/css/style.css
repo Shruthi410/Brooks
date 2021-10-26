@@ -1,0 +1,915 @@
+/*--------------------------------------------------------------
+	Common
+--------------------------------------------------------------*/
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: scrollbar;
+}
+
+body {
+  background: #fff;
+  font: 400 12px/1.8 "Open Sans", sans-serif;
+  color: #666;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+img {
+  max-width: 125%;
+  height: auto;
+}
+
+.align-center {
+  text-align: center;
+}
+
+/* Transition elsements */
+a,
+.btn {
+  transition: all 0.125s ease-in-out 0s;
+}
+
+.client-logo {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+/* Reset box-shadow */
+.btn {
+  box-shadow: none;
+}
+
+/* Reset border-radius */
+
+/* Sections */
+
+.main {
+  position: relative;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.module,
+.module-small {
+  position: relative;
+  padding: 140px 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+/* Module header */
+.module-small {
+  padding: 70px 0;
+}
+
+/* Sections dividers */
+.divider-w {
+  border-top: 1px solid #eaeaea;
+  margin: 0;
+}
+
+/* Half-image */
+
+/* Dark background */
+.bg-dark,
+.bg-dark-30,
+.bg-dark-30 .module-title {
+  color: #fff;
+}
+
+.bg-dark {
+  background: #111;
+}
+
+.bg-dark-30:before {
+  position: absolute;
+  background: rgba(2, 2, 2, 0.4);
+  content: " ";
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+/* Vertical margin, padding */
+
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+
+.mb-40 {
+  margin-bottom: 40px !important;
+}
+
+/* Scroll to top */
+.scroll-up {
+  position: fixed;
+  display: none;
+  bottom: 7px;
+  right: 7px;
+  z-index: 999;
+}
+
+.scroll-up a {
+  background: #fff;
+  display: block;
+  height: 28px;
+  width: 28px;
+  text-align: center;
+  line-height: 28px;
+  font-size: 14px;
+  color: #000;
+  opacity: 0.6;
+  border-radius: 2px;
+}
+
+.scroll-up a:hover,
+.scroll-up a:active {
+  opacity: 1;
+  color: #000;
+}
+
+/* Video */
+
+/* Landing Page */
+
+/*--------------------------------------------------------------
+	Buttons
+--------------------------------------------------------------*/
+.btn {
+  border-radius: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  padding: 8px 37px;
+}
+
+.btn:active:focus,
+.btn:focus {
+  outline: 0;
+}
+
+.btn.btn-round {
+  border-radius: 2px;
+}
+
+.btn.btn-border-w {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: #fff;
+}
+
+.btn.btn-border-w:hover,
+.btn.btn-border-w:focus {
+  background: #fff;
+  border-color: transparent;
+  color: #111;
+}
+
+.btn.btn-b {
+  background: #111111;
+  color: #fff;
+}
+
+.btn.btn-b:hover,
+.btn.btn-b:focus {
+  background: rgba(17, 17, 17, 0.8);
+}
+
+/* Buttons size */
+
+/*--------------------------------------------------------------
+	Forms
+--------------------------------------------------------------*/
+/* Selection */
+::-moz-selection {
+  background: #000;
+  color: #fff;
+}
+
+::-webkit-selection {
+  background: #000;
+  color: #fff;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+/* Forms common style */
+
+/* Forms size */
+
+
+
+/*--------------------------------------------------------------
+	Typography
+--------------------------------------------------------------*/
+a {
+  color: #111;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: #aaa;
+  outline: 0;
+}
+
+.bg-dark a {
+  color: #aaa;
+}
+
+.bg-dark a:hover, .bg-dark a:focus {
+  color: #fff;
+}
+
+h2, h4 {
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+p, ul {
+  margin: 0 0 20px;
+}
+
+.font-alt {
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.font-serif {
+  font-family: Volkhov, "Times New Roman", sans-serif;
+  font-style: italic;
+}
+
+.module-title {
+  position: relative;
+  letter-spacing: 4px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 30px;
+  color: #111;
+  margin: 0 0 70px;
+}
+
+.module-subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #111;
+  margin-bottom: 70px;
+}
+
+.module-title + .module-subtitle {
+  margin-top: -35px;
+}
+
+/* Landing Page */
+
+/*--------------------------------------------------------------
+	Slider & Carousel
+--------------------------------------------------------------*/
+/* -------------------------------------------------------------------
+General Styles - FlexSlider
+------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------
+Hero Slider
+------------------------------------------------------------------- */
+.hero-slider {
+  margin: 0 !important;
+}
+
+.hero-slider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+
+.hero-slider {
+  height: 100% !important;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-slider .slides {
+  height: 100% !important;
+  transition-delay: 1s;
+}
+
+.hero-slider .slides li {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100% !important;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+/* Caption */
+.titan-caption {
+  position: relative;
+  display: table;
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.titan-caption {
+  position: relative;
+  display: table;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.caption-content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/*
+Photography Page Slider
+*/
+
+
+/* -------------------------------------------------------------------
+General Styles - Owlcarousel
+------------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+	Preloader
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+	Navbar
+--------------------------------------------------------------*/
+.navbar-custom {
+  background-color: rgba(10, 10, 10, 0.9);
+  border: 0;
+  border-radius: 0;
+  z-index: 1000;
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  transition: background, padding 0.4s ease-in-out 0s;
+}
+
+.navbar a {
+  transition: color 0.125s ease-in-out 0s;
+}
+
+.navbar-custom .navbar-brand {
+  letter-spacing: 4px;
+  font-weight: 400;
+  font-size: 22px;
+  color: #fff;
+}
+
+.navbar-custom .nav li > a {
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-custom .nav > li > a:focus,
+.navbar-custom .nav > li > a:hover {
+  background: none;
+  color: #fff;
+}
+
+.navbar-custom .navbar-toggle .icon-bar {
+  background: #fff;
+}
+
+/* Navbar search
+
+.dropdown-search {
+	position: relative;
+	padding: 5px;
+}
+
+.dropdown-search .form-control {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 11px;
+}
+
+.search-btn {
+	position: absolute;
+	background: transparent;
+	border: none;
+	overflow: hidden;
+	top: 50%;
+	right: 1px;
+	width: 42px;
+	height: 40px;
+	line-height: 38px;
+	font-size: 14px;
+	outline: none;
+	color: #999;
+	margin-top: -20px;
+}*/
+/*--------------------------------------------------------------
+	Header
+--------------------------------------------------------------*/
+.home-section {
+  position: relative;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  z-index: 0;
+  background-size: cover;
+}
+
+.titan-title-size-1 {
+  letter-spacing: 4px;
+  font-size: 15px;
+}
+
+.titan-title-size-4 {
+  letter-spacing: 24px;
+  font-weight: 400;
+  font-size: 48px;
+}
+
+
+.shop-page-header:before {
+  background: rgba(34, 34, 34, 0.3);
+}
+
+/*--------------------------------------------------------------
+	Footer
+--------------------------------------------------------------*/
+.footer {
+  padding: 10px 0;
+}
+
+.footer .copyright {
+  margin: 10px;
+  text-align: center;
+}
+
+.footer .footer-social-links {
+  text-align: center;
+  margin: 10px;
+}
+
+.footer .footer-social-links a {
+  display: inline-block;
+  padding: 0 6px;
+}
+
+/* -------------------------------------------------------------
+Google map
+------------------------------------------------------------- */
+
+/*--------------------------------------------------------------
+	Services & Features
+--------------------------------------------------------------*/
+
+/* Content box */
+
+/*--------------------------------------------------------------
+	Team
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+	Price Table
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+	Fun fact
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+	Widgets
+--------------------------------------------------------------*/
+/* Progress bars */
+
+/* Tabs */
+
+/* Accordion */
+
+/* Tables */
+
+/* Sidebar / Widget common*/
+
+/* Icon List */
+
+/* Posts */
+
+/* Search */
+
+/* Tags */
+
+/*--------------------------------------------------------------
+	Comment Box in Blog
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+	Client
+--------------------------------------------------------------*/
+.client {
+  max-width: 100%;
+ height: auto;
+}
+
+.client-logo {
+  opacity: .5;
+  width: 100px;
+  height:100px;
+}
+
+.client-logo:hover {
+  opacity: 1;
+}
+
+/* .client {
+  width: 20px;
+} */
+
+/*--------------------------------------------------------------
+	Shop Items
+--------------------------------------------------------------*/
+.shop-item {
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.shop-item-image {
+  width: 250px;
+  height: 330px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.shop-item-image img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 110%;
+}
+
+.shop-item-detail,
+.shop-item-image:after {
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.shop-item-image:after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.shop-item-detail {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 100%;
+  padding: 20px;
+  opacity: 0;
+  z-index: 2;
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.shop-item-title {
+  font-weight: 400;
+  font-size: 14px;
+  color: #111;
+  margin: 15px 0 5px;
+}
+
+/* Shop item hover */
+.shop-item:hover .shop-item-image:after {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.shop-item:hover .shop-item-detail {
+  opacity: 1;
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+}
+
+/* -------------------------------------------------------------------
+	Exclusive products
+------------------------------------------------------------------- */
+.ex-product {
+  opacity: .7;
+  transition: all 0.4s ease-in-out 0s;
+  width: 200px;
+  height: 250px;
+}
+
+.ex-product:hover {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .navbar-transparent {
+    background: transparent;
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+  /* Comments */
+}
+
+@media (max-width: 1200px) {
+  /* Features */
+}
+
+@media (max-width: 1050px) {
+  /* Navbar */
+  .navbar-custom {
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 991px) {
+  /* Navbar */
+  .navbar-custom {
+    letter-spacing: 0;
+  }
+  /* Headers */
+  .titan-title-size-4 {
+    letter-spacing: 12px;
+    font-size: 38px;
+  }
+  /* Half-image */
+}
+
+@media (max-width: 767px) {
+  /* Navbar */
+  .navbar-custom .navbar-nav {
+    letter-spacing: 3px;
+    margin-top: 1px;
+    margin-bottom: 0;
+  }
+  .navbar-custom li > a:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+  .navbar-custom li a {
+    border-bottom: 1px solid rgba(73, 71, 71, 0.15) !important;
+  }
+  /* Shop navbar */
+  /* Headers */
+  .titan-title-size-1 {
+    letter-spacing: 2px;
+    font-size: 14px;
+  }
+  .titan-title-size-4 {
+    letter-spacing: 6px;
+    font-size: 28px;
+  }
+  /* Features */
+  /* Callout */
+  /* Sidebar */
+  .footer {
+    text-align: center;
+  }
+  .copyright,
+  .footer-social-links {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+}
+.product-info{
+     margin-left: 10px;
+}
+
+hr{
+    border-top: 1.5px solid #d8dadf;;
+}
+
+.product-title{
+    font-family: 'Montserrat', sans serif;
+    color: black;
+    font-size: 30px;
+    letter-spacing: -0.7;
+    font-weight: 500;
+}
+
+.product-brand{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    opacity: .8;
+    color: #535665;
+    line-height: 0.5;
+    letter-spacing: -0.5;
+}
+
+.product-description{
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+}
+
+.bullets{
+    margin-top: 0;
+    padding-left: 0;;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 15px;
+
+}
+
+.product-highlighted{
+    font-family: 'Roboto', sans serif;
+    color: #282c4d;
+    font-size:18px;
+    letter-spacing:-1;
+}
+
+.rating-item {
+    font-size: 12px;
+    float: right;
+}
+
+.price{
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 0.5;
+}
+
+.price-after-offer{
+    color: #646970;
+    text-decoration: line-through;
+    margin: 0 10px 0 10px;
+    font-weight: normal;
+}
+
+.color-green{
+    color: #646970;
+    font-weight: 600;
+    font-size: 14px;
+
+}
+
+.discount{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #282c4d;
+    line-height: 3;
+    letter-spacing: -1px;
+}
+
+.size-button-header{
+    margin: 10px 0 10px;
+    line-height: 3;
+    color: #282c4d;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -1px;
+}
+
+.size-button-header a{
+    float: right;
+    text-decoration:underline;
+}
+
+
+.size-button{
+    background-color: #fff;
+    border: 1px solid #bfc0c6;
+    border-radius: 50px;
+    padding: 0;
+    margin: 5px;
+    min-width: 50px;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    color: #282c3f;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    position: relative;
+}
+
+.add-to-bag-button{
+    background-color: #767676;
+    border-radius: 2px;
+    margin: 20px 0 10px 0;
+    padding: 12px 15px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid #767676;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+
+}
+.add-to-bag-button i{
+    margin-right: 10px;
+}
+
+.delivery-option{
+    margin-top:10px;
+    margin: 10px;
+    color: #767676;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.return-policy{
+    font-size: 12px;
+}
+
+.table-img{
+  width: 100px;
+  height: 150px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.quantity-arrow{
+  width: 12px;
+  cursor: pointer;
+  display: block;
+}
+
+
+.quantity{
+    display: inline-block;
+    padding-left: 15px;
+}
+
+.form-field{
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    height: 33px;
+    margin: 35px;
+    padding: 10px;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.shipping-header {
+    text-align: center;
+    margin-top: -0.5px;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.btn-ship{
+    width: 90%;
+}
+
+/* details */
+
+.zoom-img {
+  width: 315px;
+  height: 460px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.zoom-img img {
+  transition: transform .5s ease-in-out;
+}
+
+.zoom-img img:hover {
+  transform: scale(1.25);
+}
+
+
+
