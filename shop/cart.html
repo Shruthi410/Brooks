@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+      <div class="main">
+        <section class="module">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h1 class="module-title font-alt">Cart</h1>
+              </div>
+            </div>
+            <hr class="divider-w pt-20">
+            <div class="row">
+              <div class="col-sm-12">
+                <table class="table" id="cart">
+                  <tbody>
+                    <tr>
+                      <th class="hidden-xs">Item</th>
+                      <th>Description</th>
+                      <th class="hidden-xs">Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                      <th>Remove</th>
+                    </tr>
+                    {% for item in items %}
+                    <tr>
+                      <td class="hidden-xs"><a href="#"><img class="table-img" src="{{ item.product.product_image_1 }}"></a></td>
+                      <td>
+                        <h5 class=" font-alt">{{ item.product.product_name }}</h5>
+                      </td>
+                      <td class="hidden-xs">
+                        <h5 class=" font-alt">Rs. {{ item.product.discountPrice }}</h5>
+                      </td>
+                      <td>
+                        <div class="row">
+                          <div class="quantity">
+                            <h5 class="quantity">{{ item.quantity }}</h5>
+                          </div>
+                          <div class="quantity">
+                            <img data-product="{{ item.product.id }}" data-action="add" class="quantity-arrow update-cart" src="{% static 'images/arrow-up.png' %}">
+                            <img data-product="{{ item.product.id }}" data-action="remove" class="quantity-arrow update-cart" src="{% static 'images/arrow-down.png' %}">
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <h5 class=" font-alt">Rs. {{ item.get_total }}</h5>
+                      </td>
+                      <td class="pr-remove update-cart" data-product="{{ item.product.id }}" data-action="remove-item"><a href="#" title="Remove"><i class="fa fa-times"></i></a></td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+              <div class="col-sm-3 col-sm-offset-3">
+                <div class="form-group">
+                  <button class="btn btn-block btn-round btn-d pull-right" type="submit">Update Cart</button>
+                </div>
+              </div>
+            </div>
+            <hr class="divider-w">
+            <div class="row mt-70">
+              <div class="col-sm-5 col-sm-offset-7">
+                <div class="shop-Cart-totalbox">
+                  <h4 class="font-alt">Cart Totals</h4>
+                  <table class="table table-striped table-border checkout-table">
+                    <tbody>
+                      <tr>
+                        <th>Items :</th>
+                        <td>{{ order.get_cart_items }}</td>
+                      </tr>
+                      <tr class="shop-Cart-totalprice">
+                        <th>Total :</th>
+                        <td>Rs. {{ order.get_cart_total }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button class="btn btn-lg btn-block btn-round btn-d" type="submit">Proceed to Checkout</button>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        {% endblock %}

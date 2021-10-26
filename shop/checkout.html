@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="main">
+    <section class="module">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="box-element" id="form-wrapper">
+                        <br>
+                        <br>
+                        <h4 class="font-alt shipping-header">Shipping Information</h4>
+                        <form id="form">
+                            <div id="user-info">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input required class="form-control" type="text" name="name" placeholder="Name..">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input required class="form-control" type="text" name="email" placeholder="Email..">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="shipping-info">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="address" placeholder="Address..">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="city" placeholder="City..">
+                                    </div>
+                                </div>
+                                  <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="state" placeholder="State..">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <input id="form-button" class="btn btn-lg btn-block btn-round btn-d btn-ship" type="submit" value="Continue">
+                        </form>
+                    </div>
+                    <br>
+                    <div class="box-element hidden" id="payment-info">
+                        <p class="font-alt" style="text-align:center;">Paypal Options</p>
+                        <button id="make-payment" onclick="{{ cart.empty_cart }}" class="btn btn-lg btn-block btn-round btn-d"><a href="/">Make Payment</a></button>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="box-element">
+                        <button class="btn btn-lg btn-block btn-round btn-d" type="submit">← Back To Cart</button>
+                        <h4 class="font-alt">Order Summary</h4>
+                        <table class="table" id="cart">
+                            <tbody>
+                            {% for item in items %}
+                            <tr>
+                                <td class="hidden-xs"><a href="#"><img class="table-img" src="{{ item.product.product_image_1 }}"></a></td>
+                                <td>
+                                    <h5 class=" font-alt">{{ item.product.product_name }}</h5>
+                                </td>
+                                <td class="hidden-xs">
+                                    <h5 class=" font-alt">Rs. {{ item.product.discountPrice }}</h5>
+                                </td>
+                                <td>
+                                    <h5>×{{ item.quantity }}</h5>
+                                </td>
+                                <td class="pr-remove update-cart" data-product="{{ item.product.id }}" data-action="remove-item" ><a href="#" title="Remove"><i class="fa fa-times"></i></a></td>
+                            </tr>
+                            {% endfor %}
+                            <tr>
+                                <th>Items :</th>
+                                <td>{{ order.get_cart_items }}</td>
+                            </tr>
+                            <tr class="shop-Cart-totalprice">
+                                <th>Total :</th>
+                                <td>Rs. {{ order.get_cart_total }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+{% endblock %}

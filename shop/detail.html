@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block content %}
+      <div class="main">
+        <section class="module">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7 col-md-12 col-sm-12">
+                <div class="product-gallery">
+                  <div class="col-lg-6">
+                    <div class="zoom-img">
+                      <img src="{{ product.product_image_1 }}" alt="Single Product Image"/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="zoom-img">
+                      <img src="{{ product.product_image_2 }}" alt="Single Product Image"/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="zoom-img">
+                      <img src="{{ product.product_image_3 }}" alt="Single Product Image"/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="zoom-img">
+                      <img src="{{ product.product_image_4 }}" alt="Single Product Image"/>
+                    </div>
+                  </div>
+
+                 </div>
+                </div>
+
+              <div class="col-lg-5 ">
+                <div class="product-info">
+                  <div class="product-title">
+                    {{product.product_name}}
+                  </div>
+                  <div class="product-brand">
+                    {{product.product_brand}}
+                    <span class="rating product-highlighted">
+                      <span class="rating-item"><i class="fa fa-star color-green"></i><i class="fa fa-star color-green"></i><i class="fa fa-star color-green"></i><i class="fa fa-star color-green"></i><i class="fa fa-star color-green"></i></span>
+                    </span>
+                  </div>
+                  <hr>
+
+                  <div class="price product-highlighted">
+                      <span class="price-before-offer">Rs. {{ product.discountPrice  }}</span>
+                      <span class="price-after-offer">Rs. {{ product.price }}</span>
+                  </div>
+                  <div>
+                    <span class="discount">You Save {{product.discount}}%</span>
+                  </div>
+
+                  <div class="size-chart">
+                    <div  class="size-button-header">
+                      SIZE
+                      <a href="https://www.klim.com/site/klim/size-chart/int-size-chart.html">Find My Size</a>
+                    </div>
+
+                    <div>
+                      <button class="size-button" onclick="">S</button>
+                      <button class="size-button" onclick="">M</button>
+                      <button class="size-button" onclick="">L</button>
+                      <button class="size-button" onclick="">XL</button>
+                    </div>
+                  </div>
+                  <div class="add-to-bag">
+                    <button  data-product="{{ product.id }}" data-action="add" class="add-to-bag-button update-cart"><i class="fa fa-shopping-bag fa-lg"></i>ADD TO CART</button>
+                  </div>
+                  <div class="discount">
+                    <center>Free shipping on orders of Rs. 5000+</center>
+                  </div>
+                  <hr>
+                  <div class="product-details-description">
+                    <div class="product-description">
+                      {{ product.description }}
+                      <ul class="bullets">
+                        <li>CK The Basics</li>
+                        <li>Crafted from organic cotton stretch jersey</li>
+                        <li>Rib knit texture</li>
+                      </ul>
+                      <hr>
+                    </div>
+                  </div>
+                  <div class="serviceability product-highlighted">
+                    DELIVERY OPTIONS
+                  </div>
+                   <div class="product-description delivery-option">
+                      <span class="delivery-option"><i class="fa fa-shipping-fast fa-1x"></i></span>  Express Delivery<br>
+                      <span class="delivery-option"><i class="fa fa-wallet fa-1x"></i></span>  PAY ON DELIVERY AVAILABLE<br>
+                      <span class="delivery-option"><i class="fas fa-exchange-alt fa-1x"></i></span>  Easy 30 Days Return<br>
+                   </div>
+                  <hr>
+                  <div class="product-description return-policy">
+                    <span class="product-highlighted">RETURNS</span><br>
+                    · Returns accepted by mail and in store within 45 days of the shipment date.<br>
+                    · Items must be unworn and tags must be attached.<br>
+                    · Final sale items are not eligible for a return, refund or credit.<br>
+                    · Once a return is received, please allow 7-14 business days to process and 3-5 business days for the refund to be credited to the payment method used at the time of purchase.<br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {% endblock content %}

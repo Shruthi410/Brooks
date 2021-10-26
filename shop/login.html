@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="main">
+        <section class="module bg-dark-60 shop-page-header" data-background='https://images.unsplash.com/photo-1531592937781-344ad608fabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h1 class="module-title font-alt" style="color:white;">Get in touch</h1>
+                <div class="module-subtitle font-serif">
+                <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+<section class="module-small">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                  <h3 style="text-align: center;">Login</h3>
+
+                  <form method="post">
+                      {% csrf_token %}
+                      {% for message in messages %}
+                        <div class="alert alert-danger my-3 p-1" role="alert">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                      {{ form|crispy }}
+                      <input type="submit" name="Login" value="Login" class="btn btn-success">
+                  </form>
+                  <h4>Don't have an account? <a href="{% url 'register' %}" style="text-decoration: underline;" class="button">Sign Up!</a></h4>
+
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+
+{% endblock content %}

@@ -1,0 +1,132 @@
+{% load static %}
+
+<html lang="en-US" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    Document Title
+    =============================================
+    -->
+  <title>Brooks</title>
+
+  <!--
+    Stylesheets
+    =============================================
+    -->
+  <!-- Default stylesheets-->
+  <link href="{% static 'lib/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Template specific stylesheets-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+
+  <link href="{% static 'lib/animate.css/animate.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/flexslider/flexslider.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/owl.carousel/dist/static/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/owl.carousel/dist/static/owl.theme.default.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/magnific-popup/dist/magnific-popup.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/simple-text-rotator/simpletextrotator.css' %}" rel="stylesheet">
+  <!-- Main stylesheet and color file-->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <script type="text/javascript">
+    var user = '{{ request.user }}'
+
+    function getToken(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+  }
+  const csrftoken = getToken('csrftoken');
+  </script>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+<main>
+  {% if page == 'home' %}
+      <nav class="navbar navbar-custom navbar-fixed-top navbar-transparent" role="navigation">
+  {% else %}
+      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  {% endif %}
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span
+              class="icon-bar"></span></button><a class="navbar-brand" href="/">Brooks</a>
+        </div>
+        <div class="collapse navbar-collapse" id="custom-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/men/">Men</a></li>
+            <li><a href="/women/">Women</a></li>
+            <li><a href="/register/">Register</a></li>
+            <li><a href="/login/">Login</a></li>
+            <li><a href="/logout/">Logout</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/add-product/">Add Product</a></li>
+            <li><a href="/cart/">Cart</a></li>
+            <li><a href="/checkout/">Checkout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+          {% block content %}
+
+          {% endblock content %}
+
+          <footer class="footer bg-dark">
+            <div class="container">
+              <div class="row">
+                <div class="footer-social-links">
+                  <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                  <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                  <a href="#"> <i class="fa fa-instagram fa-2x"></i></a>
+                  <a href="#"><i class="fa fa-skype fa-2x"></i></a>
+                  <a href="#"><i class="fa fa-pinterest fa-2x"></i></a>
+              </div>
+                <p class="copyright font-alt">Copyright &copy; 2021&nbsp;<a href="index.html">Shruthi</a></p>
+            </div>
+            </div>
+          </footer>
+    <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+  </main>
+  <!--
+    JavaScripts
+    =============================================
+    -->
+<script src="https://kit.fontawesome.com/38d46254ac.js" crossorigin="anonymous"></script>
+  <script src="{% static 'lib/jquery/dist/jquery.js' %}"></script>
+  <script src="{% static 'lib/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'lib/wow/dist/wow.js' %}"></script>
+  <script src="{% static 'lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js' %}"></script>
+  <script src="{% static 'lib/isotope/dist/isotope.pkgd.js' %}"></script>
+  <script src="{% static 'lib/imagesloaded/imagesloaded.pkgd.js' %}"></script>
+  <script src="{% static 'lib/flexslider/jquery.flexslider.js' %}"></script>
+  <script src="{% static 'lib/owl.carousel/dist/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'lib/magnific-popup/dist/jquery.magnific-popup.js' %}"></script>
+  <script src="{% static 'lib/simple-text-rotator/jquery.simple-text-rotator.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/cart.js' %}"></script>
+  <script src="{% static 'js/checkout.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+ <div class="main">
+        <section class="module bg-dark-60 shop-page-header" data-background="https://images.unsplash.com/photo-1464666495445-5a33228a808e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1900&q=80">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h1 class="module-title font-alt" style="color: white;">Add Product</h1>
+                <div class="module-subtitle font-serif">
+                <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="module-small">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h2 class="module-subtitle font-serif">Welcome! Add Products to display.</h2>
+
+                 <form method="post">
+                     {% csrf_token %}
+                     {{ form|crispy }}
+                     <button type="submit" class="btn btn-success">Add Product</button>
+                 </form>
+
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+
+
+        {% endblock content %}
